@@ -1,0 +1,16 @@
+type Query {
+    productCollection: ProductCollection @resolver(class: "Deloitte\\CarouselGraphQl\\Model\\Resolver\\ProductsResolver") @doc(description: "Get Product collection of a store")
+}
+
+type ProductCollection @doc(description: "product collection comment") {
+    allProducts: [ProductRecord] @doc(description: "Product records with info")
+}
+
+type ProductRecord {
+    sku: String @doc(description: "Get Product sku")
+    name: String @doc(description: "Get Product name")
+    price: Float @doc(description: "Get Product price")
+    url_key: String @doc(description: "Get Product URL")
+    mediaUrl: String @doc(description: "Get Product Image Url")
+    currency_code: String @doc(description: "Get Currency code")
+}
